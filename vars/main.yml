@@ -1,2 +1,6 @@
 ---
 # vars file for Ansible-md5check
+deploy_user: chrisl
+deploy_app_name: bitcoin
+deploy_app: https://github.com/bitcoin/bitcoin/archive/master.zip
+deploy_dir: /home/{{ deploy_user }}/{{ deploy_app_name }}/
