@@ -6,7 +6,7 @@ Using a md5 check when downloading a file using an Ansible playbook.
 Requirements
 ------------
 
-
+Ansible Version 2.0 - for the checksum task on the get_url module
 
 Role Variables
 --------------
