@@ -30,4 +30,4 @@
       get_url:
         url: "{{ download_app }}"
         dest: "{{ deploy_dir }}"
-        checksum: da8e5d44124b09b9e30ba6cfae0952d2
+        checksum: "md5:{{ md5_sum.stdout }}"
