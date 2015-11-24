@@ -12,12 +12,12 @@ Role Variables
 --------------
 
 ``` yaml
-deploy_user: _user who is deploying the app_
-deploy_app_name: _the app name_
-download_app: _app url ex. https://dl.dropboxusercontent.com/u/6735750/Declaration.txt_
-download_app_md5: _md5 file url ex. https://dl.dropboxusercontent.com/u/6735750/Declaration.md5_
-deploy_dir: _where the app is downloaded to ex. "/home/{{ deploy_user }}/apps"_
-deploy_app_md5: _location of the md5 file once downloaded ex. "{{ deploy_dir }}/{{ deploy_app_name }}.md5"_
+deploy_user: *user who is deploying the app*
+deploy_app_name: *the app name*
+download_app: *app url ex. https://dl.dropboxusercontent.com/u/6735750/Declaration.txt*
+download_app_md5: *md5 file url ex. https://dl.dropboxusercontent.com/u/6735750/Declaration.md5*
+deploy_dir: *where the app is downloaded to ex. "/home/{{ deploy_user }}/apps"*
+deploy_app_md5: *location of the md5 file once downloaded ex. "{{ deploy_dir }}/{{ deploy_app_name }}.md5"*
 ```
 
 Dependencies
