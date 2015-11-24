@@ -1,0 +1,33 @@
+---
+# site.yml for the Ansible-md5check playbook
+
+  - hosts: all
+    remote_user: chris
+    sudo: no
+    vars_files:
+      - vars/main.yml
+
+    tasks:
+
+    - name: ensure the app directory is present
+      file:
+        path: "{{ deploy_dir }}"
+        state: directory
+        owner: "{{ deploy_user }}"
+        group: "{{ deploy_user }}"
+        mode: 0755
+
+    - name: ensure the md5 file is present
+      get_url:
+        url: "{{ download_app_md5 }}"
+        dest: "{{ deploy_dir }}"
+
+    - name: register the md5 sum
+      shell: "cat {{ deploy_app_md5 }}"
+      register: md5_sum
+
+    - name: download the app
+      get_url:
+        url: "{{ download_app }}"
+        dest: "{{ deploy_dir }}"
+        checksum: "md5:{{ md5_sum.stdout }}"

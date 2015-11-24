@@ -1,2 +1,8 @@
 ---
 # vars file for Ansible-md5check
+deploy_user: chris
+deploy_app_name: Declaration
+download_app: https://dl.dropboxusercontent.com/u/6735750/Declaration.txt
+download_app_md5: https://dl.dropboxusercontent.com/u/6735750/Declaration.md5
+deploy_dir: "/home/{{ deploy_user }}/apps"
+deploy_app_md5: "{{ deploy_dir }}/{{ deploy_app_name }}.md5"
